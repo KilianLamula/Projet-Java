@@ -11,7 +11,7 @@ import java.util.ArrayList;
  *
  * @author lamul
  */
-public class ProgrammeTele {
+public class ProgrammeTele extends ArrayList {
     
     private ArrayList<Emissions> lesEmissions;
 
