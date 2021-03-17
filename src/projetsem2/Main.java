@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
         
         //Création de la liste d'émissions
-        ArrayList<Emissions> lesEmissions = new ArrayList<Emissions>();
+        ArrayList<Emission> lesEmissions = new ArrayList<Emission>();
         
         
     }

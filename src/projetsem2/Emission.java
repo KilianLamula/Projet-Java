@@ -9,13 +9,13 @@ package projetsem2;
  *
  * @author lamul
  */
-public class Emissions {
+public class Emission {
     
     private String nom;
     private int duree;
     private int heureDebut;
 
-    public Emissions(String nom, int duree, int heureDebut) {
+    public Emission(String nom, int duree, int heureDebut) {
         this.nom = nom;
         this.duree = duree;
         this.heureDebut = heureDebut;

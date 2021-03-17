@@ -73,7 +73,7 @@ public class PersonneTest {
     }
       public void testGetPrenomTest() {
         System.out.println("getPrenom Test");
-        Personne instance = (Nom,Prenom);
+        Personne instance = new Personne('Nom','Prenom');
         String expResult = "Test";
         String result = instance.getPrenom();
         assertEquals(expResult, result);
