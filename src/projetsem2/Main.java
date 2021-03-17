@@ -5,17 +5,23 @@
  */
 package projetsem2;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author lamul
  */
-public class ProjetSEM2 {
+public class Main {
 
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        //Création de la liste d'émissions
+        ArrayList<Emissions> lesEmissions = new ArrayList<Emissions>();
+        
+        
     }
     
 }
