@@ -10,7 +10,7 @@ package projetsem2;
  * @author lamul
  */
 public class Personne {
-    
+
     private String nom;
     private String prenom;
 
@@ -18,4 +18,13 @@ public class Personne {
         this.nom = nom;
         this.prenom = prenom;
     }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
 }
