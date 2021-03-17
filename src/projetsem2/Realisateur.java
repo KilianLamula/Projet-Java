@@ -9,6 +9,11 @@ package projetsem2;
  *
  * @author lamul
  */
-public class Réalisateur {
-    
+public class Realisateur extends Personne {
+
+    public Realisateur(String nom, String prenom) {
+        super(nom, prenom);
+    }
+
+
 }
