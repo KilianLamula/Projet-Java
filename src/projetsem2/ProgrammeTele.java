@@ -13,9 +13,9 @@ import java.util.ArrayList;
  */
 public class ProgrammeTele extends ArrayList {
     
-    private ArrayList<Emissions> lesEmissions;
+    private ArrayList<Emission> lesEmissions;
 
-    public ProgrammeTele(ArrayList<Emissions> lesEmissions) {
+    public ProgrammeTele(ArrayList<Emission> lesEmissions) {
         this.lesEmissions = lesEmissions;
     }
     
