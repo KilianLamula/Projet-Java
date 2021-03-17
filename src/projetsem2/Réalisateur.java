@@ -9,6 +9,6 @@ package projetsem2;
  *
  * @author lamul
  */
-public class Réalisateur {
+public class Réalisateur extends Personne{
     
 }

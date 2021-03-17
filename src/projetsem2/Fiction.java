@@ -9,6 +9,10 @@ package projetsem2;
  *
  * @author lamul
  */
-public class Fiction {
+public class Fiction extends Emissions{
+    
+    public Fiction(String nom, int duree, int heureDebut) {
+        super(nom, duree, heureDebut);
+    }
     
 }

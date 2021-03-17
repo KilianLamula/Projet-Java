@@ -11,15 +11,14 @@ package projetsem2;
  */
 public class Emissions {
     
-    private String nom;
-    private int duree;
-    private int heureDebut;
+    protected String nom;
+    protected int duree;
+    protected int heureDebut;
 
     public Emissions(String nom, int duree, int heureDebut) {
         this.nom = nom;
         this.duree = duree;
         this.heureDebut = heureDebut;
+        
     }
-
-    //test 1
 }
