@@ -41,27 +41,43 @@ public class PersonneTest {
      * Test of getNom method, of class Personne.
      */
     @Test
-    public void testGetNom() {
-        System.out.println("getNom");
+    public void testGetNomVide() {
+        System.out.println("getNom null");
         Personne instance = null;
         String expResult = "";
         String result = instance.getNom();
         assertEquals(expResult, result);
-        fail("The test case is a prototype.");
+        fail("La fonction getNom est disfonctionnelle si elle est vide");
+    }
+    
+    public void testGetNom() {
+        System.out.println("getNom Test");
+        Personne instance = ('Nom','Prenom');
+        String expResult = "Test";
+        String result = instance.getNom();
+        assertEquals(expResult, result);
+        fail("La fonction getNom est disfonctionnelle avec le nom 'Test' ");
     }
 
     /**
      * Test of getPrenom method, of class Personne.
      */
     @Test
-    public void testGetPrenom() {
-        System.out.println("getPrenom");
+    public void testGetPrenomVide() {
+       System.out.println("getPrenom null");
         Personne instance = null;
         String expResult = "";
         String result = instance.getPrenom();
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        fail("La fonction getPrenom est disfonctionnelle si elle est vide");
+    }
+      public void testGetPrenomTest() {
+        System.out.println("getPrenom Test");
+        Personne instance = (Nom,Prenom);
+        String expResult = "Test";
+        String result = instance.getPrenom();
+        assertEquals(expResult, result);
+        fail("La fonction getPrenom est disfonctionnelle avec le nom 'Test' ");
     }
     
 }
