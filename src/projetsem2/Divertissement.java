@@ -9,10 +9,17 @@ package projetsem2;
  *
  * @author lamul
  */
-public class Divertissement extends Emissions {
+public class Divertissement extends Emission {
     
-    public Divertissement(String nom, int duree, int heureDebut) {
-        super(nom, duree, heureDebut);
+    protected Animateur a;
+    
+    public Divertissement(String nom, int duree, int heureDebut, Animateur a) {
+        super(nom, 2, heureDebut);
+        this.a = a;
+    }
+
+    public String toString() {
+        return super.toString() + ", " + a + ')' + '\n';
     }
     
 }

@@ -21,5 +21,7 @@ public class Emission {
         this.heureDebut = heureDebut;
     }
 
-    //test 1
+    public String toString() {
+        return this.getClass().getSimpleName() + " : nom=" + nom + ", duree=" + duree + ", heureDebut=" + heureDebut ;
+    }
 }

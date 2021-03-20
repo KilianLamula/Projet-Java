@@ -9,10 +9,21 @@ package projetsem2;
  *
  * @author lamul
  */
-public class Fiction extends Emissions{
+public class Fiction extends Emission{
     
-    public Fiction(String nom, int duree, int heureDebut) {
+    protected int annee;
+    protected boolean rediffusion;
+    protected Realisateur r;
+    
+    public Fiction(String nom, int duree, int heureDebut, int annee, boolean rediffusion, Realisateur r) {
         super(nom, duree, heureDebut);
+        this.annee = annee;
+        this.rediffusion = rediffusion;
+        this.r = r;
+    }
+
+    public String toString() {
+        return super.toString() + "annee=" + annee + ", rediffusion=" + rediffusion + ", " + r + ')' + '\n';
     }
     
 }

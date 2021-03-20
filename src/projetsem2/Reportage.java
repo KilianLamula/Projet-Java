@@ -9,10 +9,17 @@ package projetsem2;
  *
  * @author lamul
  */
-public class Reportage extends Emissions {
+public class Reportage extends Emission {
     
-    public Reportage(String nom, int duree, int heureDebut) {
-        super(nom, duree, heureDebut);
+    protected Theme theme;
+    
+    public Reportage(String nom, int duree, int heureDebut, Theme theme) {
+        super(nom, 1, heureDebut);
+        this.theme = theme;
+    }
+
+    public String toString() {
+        return super.toString() + "theme=" + theme + ')' + '\n';
     }
     
 }
