@@ -13,7 +13,7 @@ public class Reportage extends Emission {
     
     protected Theme theme;
     
-    public Reportage(String nom, int duree, int heureDebut, Theme theme) throws GrilleException{
+    public Reportage(String nom, int heureDebut, Theme theme) throws GrilleException{
         super(nom, 1, heureDebut);
         this.theme = theme;
         

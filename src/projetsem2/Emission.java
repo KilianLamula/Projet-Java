@@ -11,9 +11,9 @@ package projetsem2;
  */
 public class Emission {
     
-    private String nom;
-    private int duree;
-    private int heureDebut;
+    protected String nom;
+    protected int duree;
+    protected int heureDebut;
 
     public Emission(String nom, int duree, int heureDebut) {
         this.nom = nom;

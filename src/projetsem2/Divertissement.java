@@ -13,7 +13,7 @@ public class Divertissement extends Emission {
 
     protected Animateur a;
 
-    public Divertissement(String nom, int duree, int heureDebut, Animateur a) throws GrilleException {
+    public Divertissement(String nom, int heureDebut, Animateur a) throws GrilleException {
 
         super(nom, 2, heureDebut);
         this.a = a;
