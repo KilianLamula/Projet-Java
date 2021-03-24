@@ -11,9 +11,9 @@ package projetsem2;
  */
 public class Emission {
     
-    private String nom;
-    private int duree;
-    private int heureDebut;
+    protected String nom;
+    protected int duree;
+    protected int heureDebut;
 
     public Emission(String nom, int duree, int heureDebut) {
         this.nom = nom;
@@ -24,4 +24,18 @@ public class Emission {
     public String toString() {
         return this.getClass().getSimpleName() + " : nom=" + nom + ", duree=" + duree + ", heureDebut=" + heureDebut ;
     }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public int getDuree() {
+        return duree;
+    }
+
+    public int getHeureDebut() {
+        return heureDebut;
+    }
+    
+    
 }
