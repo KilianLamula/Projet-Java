@@ -18,7 +18,7 @@ public class Main {
      */
     public static void main(String[] args) {
         
-        Emission e1 = Fiction (Inception,4,0,Nolan,Christopher,2010,True);
+        Emission e1 = new Fiction ("Inception",4,0,"Nolan","Christopher",2010,true);
         Emission e2 = Reportage (La danse des oiseaux,1,4,Animalier);
         Emission e3 = Fiction (Independence,4,5,Emmerich,Roland,1996,True);
         Emission e4 = Fiction (Avatar,4,9,Cameron,James,2009,True);   
