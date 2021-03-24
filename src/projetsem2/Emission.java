@@ -24,4 +24,18 @@ public class Emission {
     public String toString() {
         return this.getClass().getSimpleName() + " : nom=" + nom + ", duree=" + duree + ", heureDebut=" + heureDebut ;
     }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public int getDuree() {
+        return duree;
+    }
+
+    public int getHeureDebut() {
+        return heureDebut;
+    }
+    
+    
 }
