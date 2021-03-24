@@ -21,8 +21,8 @@ public class Main {
     public static void main(String[] args) {
         
         //Création de la liste d'émissions
-            ArrayList<Emission> lesEmissions = new ArrayList<Emission>();
-            
+        ArrayList<Emission> lesEmissions = new ArrayList<Emission>();
+           
         try {
             //Création des émissions
             Emission e1 = new Fiction("Inception",4,0,2010,true,new Realisateur("Nolan","Christopher"));

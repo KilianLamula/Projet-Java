@@ -17,15 +17,8 @@ public class Reportage extends Emission {
         super(nom, 1, heureDebut);
         this.theme = theme;
         
-        //Exception pour l'heure de début
-        if(!(14 <= heureDebut || heureDebut<= 17) && !(0 <= heureDebut || heureDebut <= 5)){
-            throw new HoraireInvalideException("Le reportage doit avoir une heure de début ("+heureDebut+") entre 14h et 17h ou entre 00h et 5h");
-        }
-        
-        //Exception pour l'heure de fin
-        int heureFin = heureDebut+duree;
-        if(!(heureFin >= 15 || heureFin <= 18 ) && (heureFin >= 1 || heureFin <= 6)){
-            throw new HoraireInvalideException("Le reportage doit avoir une heure de fin ("+heureFin+") entre 15h et 18h ou entre 1h et 6h");
+        if((((heureDebut > 6) && (heureDebut < 14)) || (((heureDebut+duree) > 18) && ((heureDebut+duree) < 0)))){
+            throw new HoraireInvalideException("Le reportage doit avoir une heure de début ("+heureDebut+") et une heure de fin ("+(heureDebut+duree)+") fixées entre 14h et 18h ou entre 00h et 6h");
         }
     }
 

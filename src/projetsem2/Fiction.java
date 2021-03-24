@@ -20,6 +20,7 @@ public class Fiction extends Emission {
         this.annee = annee;
         this.rediffusion = rediffusion;
         this.r = r;
+        
         if (rediffusion == false && heureDebut < 21) {
             throw new HoraireInvalideException("Si une émission de Fiction n'est pas rediffusée, elle doit commencer après 21h et ne peut donc pas commencer à " + heureDebut + "h.");
         }
