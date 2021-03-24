@@ -15,13 +15,13 @@ public class Fiction extends Emission {
     protected boolean rediffusion;
     protected Realisateur r;
 
-    public Fiction(String nom, int duree, int heureDebut, int annee, boolean rediffusion, Realisateur r) throws GrilleException {
+    public Fiction(String nom, int duree, int heureDebut, int annee, boolean rediffusion, Realisateur r) throws HoraireInvalideException, DureeInvalideException {
         super(nom, duree, heureDebut);
         this.annee = annee;
         this.rediffusion = rediffusion;
         this.r = r;
         if (rediffusion == false && heureDebut < 21) {
-            throw new GrilleException("Si une émission de Fiction n'est pas rediffusée, elle doit commencer après 21h et ne peut donc pas commencer à " + heureDebut + "h.");
+            throw new HoraireInvalideException("Si une émission de Fiction n'est pas rediffusée, elle doit commencer après 21h et ne peut donc pas commencer à " + heureDebut + "h.");
         }
     }
 

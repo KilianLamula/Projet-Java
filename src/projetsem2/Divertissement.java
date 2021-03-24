@@ -13,13 +13,13 @@ public class Divertissement extends Emission {
 
     protected Animateur a;
 
-    public Divertissement(String nom, int heureDebut, Animateur a) throws GrilleException {
+    public Divertissement(String nom, int heureDebut, Animateur a) throws HoraireInvalideException, DureeInvalideException {
 
         super(nom, 2, heureDebut);
         this.a = a;
 
         if ((heureDebut < 18)&&(heureDebut + duree > 21)) {
-            throw new GrilleException("L'heure de début" +heureDebut+ "et l'heure de fin" +(heureDebut+duree)+ "doivent être fixée entre 18h et 21h");
+            throw new HoraireInvalideException("L'heure de début" +heureDebut+ "et l'heure de fin" +(heureDebut+duree)+ "doivent être fixée entre 18h et 21h");
         }
     }
     @Override

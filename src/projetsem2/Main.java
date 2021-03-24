@@ -44,8 +44,10 @@ public class Main {
             lesEmissions.add(e7);
             lesEmissions.add(e8);
             
-        } catch (GrilleException ex) {
+        } catch (DureeInvalideException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (HoraireInvalideException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex); 
         }
         //Affichage du programme
         System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
