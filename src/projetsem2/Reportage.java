@@ -17,13 +17,14 @@ public class Reportage extends Emission {
         super(nom, 1, heureDebut);
         this.theme = theme;
         
+        //Exception horaires programmation : entre 00h et 6h ou entre 14h et 18h comrpis
         if((((heureDebut > 6) && (heureDebut < 14)) || (((heureDebut+duree) > 18) && ((heureDebut+duree) < 0)))){
             throw new HoraireInvalideException("Le reportage doit avoir une heure de début ("+heureDebut+") et une heure de fin ("+(heureDebut+duree)+") fixées entre 14h et 18h ou entre 00h et 6h");
         }
     }
 
     public String toString() {
-        return super.toString() + "theme=" + theme + ')' + '\n';
+        return super.toString() + ", theme=" + theme + ')' + '\n';
     }
     
 }

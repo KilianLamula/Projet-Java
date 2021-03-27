@@ -44,13 +44,28 @@ public class Main {
             lesEmissions.add(e7);
             lesEmissions.add(e8);
             
+            //Affichage du programme
+            System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
+            
         } catch (DureeInvalideException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         } catch (HoraireInvalideException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex); 
         }
-        //Affichage du programme
-        System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
+        
+        //Création du programme télé savane
+        ProgrammeTele programme = new ProgrammeTele(lesEmissions);
+        
+        //Validation de la grille : vérification des trous/chevauchements
+        try {
+            programme.validationGrille();
+        } catch (TrouException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ChevauchementException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (HoraireInvalideException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
     
 }
