@@ -31,7 +31,7 @@ public class Main {
             Emission e4 = new Fiction ("Avatar",4,9,2009,true,new Realisateur("Cameron","James"));
             Emission e5 = new Fiction ("Alita",4,13,2019,true,new Realisateur("Rodriguez","Robert"));
             Emission e6 = new Fiction ("Passengers",2,17,2016,true,new Realisateur("Tyldum","Morten"));
-            Emission e7 = new Divertissement ("TPMP",19,new Animateur("Hamouna","Cyril"));
+            Emission e7 = new Divertissement ("TPMP",17,new Animateur("Hamouna","Cyril"));
             Emission e8 = new Fiction ("Interstellar",3,21,2014,false,new Realisateur("Nolan","Christopher"));
             
             //Replissage de la liste
