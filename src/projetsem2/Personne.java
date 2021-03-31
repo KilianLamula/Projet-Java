@@ -19,6 +19,10 @@ public class Personne {
         this.prenom = prenom;
     }
 
+    public String toString() {
+        return "(" + this.getClass().getSimpleName() + " : nom=" + nom + ", prenom=" + prenom + ')';
+    }
+
     public String getNom() {
         return nom;
     }
