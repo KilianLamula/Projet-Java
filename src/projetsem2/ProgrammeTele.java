@@ -26,6 +26,7 @@ public class ProgrammeTele extends ArrayList {
     //Méthode pour gérer les trous et les chevauchements
     public void validationGrille() throws TrouException, ChevauchementException, HoraireInvalideException {
         boolean grille[] = new boolean[24];
+        //On initialise toutes les cases du tableau de booléen à false
         for(int a = 0 ; a < grille.length ; a++){
             grille[a]=false;
         }
