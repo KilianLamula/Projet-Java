@@ -21,8 +21,8 @@ public class Main {
     public static void main(String[] args) {
         
         //Création de la liste d'émissions
-            ArrayList<Emission> lesEmissions = new ArrayList<Emission>();
-            
+        ArrayList<Emission> lesEmissions = new ArrayList<Emission>();
+           
         try {
             //Création des émissions
             Emission e1 = new Fiction("Inception",4,0,2010,true,new Realisateur("Nolan","Christopher"));
@@ -44,11 +44,28 @@ public class Main {
             lesEmissions.add(e7);
             lesEmissions.add(e8);
             
-        } catch (GrilleException ex) {
+            //Affichage du programme
+            System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
+            
+        } catch (DureeInvalideException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (HoraireInvalideException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex); 
+        }
+        
+        //Création du programme télé savane
+        ProgrammeTele programme = new ProgrammeTele(lesEmissions);
+        
+        //Validation de la grille : vérification des trous/chevauchements
+        try {
+            programme.validationGrille();
+        } catch (TrouException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ChevauchementException ex) {
+            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (HoraireInvalideException ex) {
             Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
         }
-        //Affichage du programme
-        System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
     }
     
 }
