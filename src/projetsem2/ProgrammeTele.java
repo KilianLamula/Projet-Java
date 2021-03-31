@@ -5,13 +5,14 @@
  */
 package projetsem2;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author lamul
  */
-public class ProgrammeTele extends ArrayList {
+public class ProgrammeTele extends ArrayList implements Serializable {
     
     private ArrayList<Emission> lesEmissions;
 
