@@ -22,6 +22,7 @@ public class Main {
 
         //Création de la liste d'émissions
         ArrayList<Emission> lesEmissions = new ArrayList<Emission>();
+        ArrayList Exceptions = new ArrayList();
         //Création du programme télé savane
         ProgrammeTele programme = new ProgrammeTele(lesEmissions);
 
@@ -54,11 +55,14 @@ public class Main {
             try {
                 programme.validationGrille();
             } catch (TrouException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Exceptions.add(ex);
             } catch (ChevauchementException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Exceptions.add(ex);
             } catch (HoraireInvalideException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Exceptions.add(ex);
             }
 
             //Affichage du programme
@@ -81,15 +85,18 @@ public class Main {
             try {
                 programme.validationGrille();
             } catch (TrouException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Exceptions.add(ex);
             } catch (ChevauchementException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Exceptions.add(ex);
             } catch (HoraireInvalideException ex) {
-                Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Exceptions.add(ex);
             }
 
             //Affichage du programme
-            System.out.println("Grille Valide:");
+            System.out.println("Grille Chevauchement:");
             System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
 
             //On supprime toutes les émissions pour pouvoir créer une nouvelle grille
@@ -105,25 +112,31 @@ public class Main {
             lesEmissions.add(e8);
 
         } catch (DureeInvalideException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Exceptions.add(ex);
         } catch (HoraireInvalideException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Exceptions.add(ex);
         }
 
         //Validation de la grille : vérification des trous/chevauchements
         try {
             programme.validationGrille();
         } catch (TrouException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Exceptions.add(ex);
         } catch (ChevauchementException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Exceptions.add(ex);
         } catch (HoraireInvalideException ex) {
-            Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+            //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                Exceptions.add(ex);
         }
 
         //Affichage du programme
-        System.out.println("Grille Valide:");
+        System.out.println("Grille Trou:");
         System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
+        System.out.println("Les erreurs s'étant produites pendant le développement sont: " + '\n' + Exceptions );
 
     }
 
