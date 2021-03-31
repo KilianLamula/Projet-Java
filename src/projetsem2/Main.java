@@ -96,7 +96,7 @@ public class Main {
             }
 
             //Affichage du programme
-            System.out.println("Grille Valide:");
+            System.out.println("Grille Chevauchement:");
             System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
 
             //On supprime toutes les émissions pour pouvoir créer une nouvelle grille
@@ -134,9 +134,9 @@ public class Main {
         }
 
         //Affichage du programme
-        System.out.println("Grille Valide:");
+        System.out.println("Grille Trou:");
         System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
-        System.out.println("Les erreurs s'étant produites pendant le développement sont: " + Exceptions);
+        System.out.println("Les erreurs s'étant produites pendant le développement sont: " + '\n' + Exceptions );
 
     }
 
