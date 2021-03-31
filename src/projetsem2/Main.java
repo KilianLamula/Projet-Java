@@ -42,7 +42,7 @@ public class Main {
             Emission e9 = new Fiction("Independence", 4, 5, 1996, true, new Realisateur("Emmerich", "Roland"));
             Emission e10 = new Fiction("Avatar", 4, 8, 2009, true, new Realisateur("Cameron", "James"));
 
-            //Remplissage de la liste
+            //Remplissage de la liste valide
             lesEmissions.add(e1);
             lesEmissions.add(e2);
             lesEmissions.add(e3);
@@ -51,7 +51,8 @@ public class Main {
             lesEmissions.add(e6);
             lesEmissions.add(e7);
             lesEmissions.add(e8);
-
+            
+            //Validation de la grille valide : vérification des trous/chevauchements
             try {
                 programme.validationGrille();
             } catch (TrouException ex) {
@@ -65,7 +66,7 @@ public class Main {
                 Exceptions.add(ex);
             }
 
-            //Affichage du programme
+            //Affichage du programme pour la grille valide
             System.out.println("Grille Valide:");
             System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
 
@@ -81,7 +82,8 @@ public class Main {
             lesEmissions.add(e6);
             lesEmissions.add(e7);
             lesEmissions.add(e8);
-
+            
+            //Validation de la grille avec un chevauchement : vérification des trous/chevauchements
             try {
                 programme.validationGrille();
             } catch (TrouException ex) {
@@ -95,7 +97,7 @@ public class Main {
                 Exceptions.add(ex);
             }
 
-            //Affichage du programme
+            //Affichage du programme pour la grille chevauchement
             System.out.println("Grille Chevauchement:");
             System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
 
@@ -111,21 +113,21 @@ public class Main {
             lesEmissions.add(e6);
             lesEmissions.add(e8);
 
+             //Validation de la grille à trous : vérification des trous/chevauchements
+            try {
+                programme.validationGrille();
+            } catch (TrouException ex) {
+                //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                    Exceptions.add(ex);
+            } catch (ChevauchementException ex) {
+                //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                    Exceptions.add(ex);
+            } catch (HoraireInvalideException ex) {
+                //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
+                    Exceptions.add(ex);
+            }
+        
         } catch (DureeInvalideException ex) {
-            //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                Exceptions.add(ex);
-        } catch (HoraireInvalideException ex) {
-            //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                Exceptions.add(ex);
-        }
-
-        //Validation de la grille : vérification des trous/chevauchements
-        try {
-            programme.validationGrille();
-        } catch (TrouException ex) {
-            //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                Exceptions.add(ex);
-        } catch (ChevauchementException ex) {
             //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
                 Exceptions.add(ex);
         } catch (HoraireInvalideException ex) {
