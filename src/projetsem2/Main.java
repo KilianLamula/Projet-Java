@@ -141,6 +141,7 @@ public class Main {
         System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
         System.out.println("Les erreurs s'étant produites pendant le développement sont: " + '\n' + Exceptions );
 
+        programme.sauver("prog1.bin");
     }
 
 }

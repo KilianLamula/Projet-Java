@@ -5,6 +5,12 @@
  */
 package projetsem2;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -52,5 +58,31 @@ public class ProgrammeTele extends ArrayList implements Serializable {
             }
         }
         System.out.println("La grille est valide");
+    }
+
+    public void sauver(String filePath)
+            throws FileNotFoundException, IOException {
+        // Un flux binaire en écriture vers le fichier passé en paramètre
+        FileOutputStream fos = new FileOutputStream(filePath);
+        // Un flux de traitement des objets construit sur le flux binaire
+        ObjectOutputStream oos = new ObjectOutputStream(fos);
+        // Ecriture de l'objet courant (this) dans le flux de traitement,
+        // donc dans le fichier
+        oos.writeObject(this);
+        // Fermeture du flux (obligatoire)
+        oos.close();
+    }
+
+    public static ProgrammeTele lire(String filePath)
+            throws FileNotFoundException, IOException, ClassNotFoundException {
+        // Un flux binaire en lecture sur le fichier passé en paramètre
+        FileInputStream fis = new FileInputStream(filePath);
+        // Un flux de traitement des objets construit sur le flux binaire
+        ObjectInputStream ois = new ObjectInputStream(fis);
+        // Lecture d'un objet dans le flux de traitement. La méthode readObject()
+        // retourne un Object, il convient donc de le transtyper (cast) en Personne.
+        ProgrammeTele obj = (ProgrammeTele) ois.readObject();
+        ois.close();
+        return obj;
     }
 }
