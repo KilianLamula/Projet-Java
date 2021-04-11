@@ -5,11 +5,13 @@
  */
 package projetsem2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author lamul
  */
-public class Emission {
+public class Emission implements Serializable {
     
     protected String nom;
     protected int duree;

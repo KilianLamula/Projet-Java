@@ -5,11 +5,13 @@
  */
 package projetsem2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author lamul
  */
-public class Reportage extends Emission {
+public class Reportage extends Emission implements Serializable {
     
     protected Theme theme;
     

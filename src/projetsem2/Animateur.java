@@ -5,11 +5,13 @@
  */
 package projetsem2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author lamul
  */
-public class Animateur extends Personne {
+public class Animateur extends Personne implements Serializable {
 
     public Animateur(String nom, String prenom) {
         super(nom, prenom);

@@ -5,11 +5,13 @@
  */
 package projetsem2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author lamul
  */
-public class Personne {
+public class Personne implements Serializable {
 
     private String nom;
     private String prenom;

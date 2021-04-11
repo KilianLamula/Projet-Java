@@ -24,7 +24,7 @@ public class Main {
         ArrayList<Emission> lesEmissions = new ArrayList<Emission>();
         //Création d'une liste pour stocker les messages d'exceptions
         ArrayList Exceptions = new ArrayList();
-        //Création du programme télé savane
+        //Création du programme télé
         ProgrammeTele programme = new ProgrammeTele(lesEmissions);
 
         try {

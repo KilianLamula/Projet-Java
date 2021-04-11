@@ -5,11 +5,13 @@
  */
 package projetsem2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author lamul
  */
-public class Fiction extends Emission {
+public class Fiction extends Emission implements Serializable {
 
     protected int annee;
     protected boolean rediffusion;

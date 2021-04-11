@@ -5,11 +5,13 @@
  */
 package projetsem2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author lamul
  */
-public class Divertissement extends Emission {
+public class Divertissement extends Emission implements Serializable {
 
     protected Animateur a;
 
