@@ -5,6 +5,7 @@
  */
 package projetsem2;
 
+
 /**
  *
  * @author lamul
@@ -14,6 +15,10 @@ public class Realisateur extends Personne {
     public Realisateur(String nom, String prenom) {
         super(nom, prenom);
     }
-
+    
+    //Méthode pour la sauvegarde en texte
+    public String getTexteASauver() {
+        return super.getTexteASauver();
+    }
 
 }

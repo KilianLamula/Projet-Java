@@ -5,6 +5,7 @@
  */
 package projetsem2;
 
+
 /**
  *
  * @author lamul
@@ -27,4 +28,8 @@ public class Reportage extends Emission {
         return super.toString() + ", theme=" + theme + ')' + '\n';
     }
     
+    //Méthode pour la sauvegarde en texte
+    public String getTexteASauver() {
+        return super.getTexteASauver() + "|" + theme;
+    }
 }

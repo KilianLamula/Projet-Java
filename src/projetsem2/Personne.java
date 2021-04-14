@@ -5,6 +5,7 @@
  */
 package projetsem2;
 
+
 /**
  *
  * @author lamul
@@ -29,6 +30,11 @@ public class Personne {
 
     public String getPrenom() {
         return prenom;
+    }
+    
+    //Méthode pour la sauvegarde en texte
+    public String getTexteASauver() {
+        return nom + "|" + prenom;
     }
 
 }

@@ -5,6 +5,7 @@
  */
 package projetsem2;
 
+
 /**
  *
  * @author lamul
@@ -25,6 +26,11 @@ public class Divertissement extends Emission {
     
     public String toString() {
         return super.toString() + ", " + a + ')' + '\n';
+    }
+    
+    //Méthode pour la sauvegarde en texte
+    public String getTexteASauver() {
+        return super.getTexteASauver() + "|" + a.getTexteASauver();
     }
 }
 

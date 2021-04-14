@@ -5,6 +5,7 @@
  */
 package projetsem2;
 
+
 /**
  *
  * @author lamul
@@ -34,6 +35,11 @@ public class Fiction extends Emission {
 
     public String toString() {
         return super.toString() + ", annee=" + annee + ", rediffusion=" + rediffusion + ", " + r + ')' + '\n';
+    }
+    
+    //Méthode pour la sauvegarde en texte
+    public String getTexteASauver() {
+        return super.getTexteASauver() + "|" + annee + "|" + rediffusion + "|" + r.getTexteASauver();
     }
 
 }

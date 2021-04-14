@@ -5,6 +5,8 @@
  */
 package projetsem2;
 
+import java.io.Serializable;
+
 /**
  *
  * @author lamul
@@ -15,4 +17,8 @@ public class Animateur extends Personne {
         super(nom, prenom);
     }
     
+    //Méthode pour la sauvegarde en texte
+    public String getTexteASauver() {
+        return super.getTexteASauver();
+    }
 }

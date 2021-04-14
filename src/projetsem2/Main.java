@@ -23,7 +23,7 @@ public class Main {
         //Création de la liste d'émissions
         ArrayList<Emission> lesEmissions = new ArrayList<Emission>();
         //Création d'une liste pour stocker les messages d'exceptions
-        ArrayList Exceptions = new ArrayList();
+        ArrayList<Exception> exceptions = new ArrayList();
         //Création du programme télé savane
         ProgrammeTele programme = new ProgrammeTele(lesEmissions);
 
@@ -52,19 +52,19 @@ public class Main {
             lesEmissions.add(e6);
             lesEmissions.add(e7);
             lesEmissions.add(e8);
-            
+
             //Validation de la grille valide : vérification des trous/chevauchements
             try {
                 programme.validationGrille();
             } catch (TrouException ex) {
                 //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                Exceptions.add(ex);
+                exceptions.add(ex);
             } catch (ChevauchementException ex) {
                 //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                Exceptions.add(ex);
+                exceptions.add(ex);
             } catch (HoraireInvalideException ex) {
                 //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                Exceptions.add(ex);
+                exceptions.add(ex);
             }
 
             //Affichage du programme pour la grille valide
@@ -83,19 +83,19 @@ public class Main {
             lesEmissions.add(e6);
             lesEmissions.add(e7);
             lesEmissions.add(e8);
-            
+
             //Validation de la grille avec un chevauchement : vérification des trous/chevauchements
             try {
                 programme.validationGrille();
             } catch (TrouException ex) {
                 //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                Exceptions.add(ex);
+                exceptions.add(ex);
             } catch (ChevauchementException ex) {
                 //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                Exceptions.add(ex);
+                exceptions.add(ex);
             } catch (HoraireInvalideException ex) {
                 //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                Exceptions.add(ex);
+                exceptions.add(ex);
             }
 
             //Affichage du programme pour la grille chevauchement
@@ -114,34 +114,35 @@ public class Main {
             lesEmissions.add(e6);
             lesEmissions.add(e8);
 
-             //Validation de la grille à trous : vérification des trous/chevauchements
+            //Validation de la grille à trous : vérification des trous/chevauchements
             try {
                 programme.validationGrille();
             } catch (TrouException ex) {
                 //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                    Exceptions.add(ex);
+                exceptions.add(ex);
             } catch (ChevauchementException ex) {
                 //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                    Exceptions.add(ex);
+                exceptions.add(ex);
             } catch (HoraireInvalideException ex) {
                 //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                    Exceptions.add(ex);
+                exceptions.add(ex);
             }
-        
+
         } catch (DureeInvalideException ex) {
             //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                Exceptions.add(ex);
+            exceptions.add(ex);
         } catch (HoraireInvalideException ex) {
             //Logger.getLogger(Main.class.getName()).log(Level.SEVERE, null, ex);
-                Exceptions.add(ex);
+            exceptions.add(ex);
         }
 
         //Affichage du programme
         System.out.println("Grille Trou:");
         System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
-        System.out.println("Les erreurs s'étant produites pendant le développement sont: " + '\n' + Exceptions );
-
-        programme.sauver("prog1.bin");
+        System.out.println("Les erreurs s'étant produites pendant le développement sont: ");
+        for(Exception ex : exceptions) {
+            System.out.println(ex);
+        }
     }
 
 }
