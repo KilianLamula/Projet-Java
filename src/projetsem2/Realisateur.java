@@ -16,6 +16,10 @@ public class Realisateur extends Personne implements Serializable {
     public Realisateur(String nom, String prenom) {
         super(nom, prenom);
     }
-
+    
+    //Méthode pour la sauvegarde en texte
+    public String getTexteASauver() {
+        return super.getTexteASauver();
+    }
 
 }

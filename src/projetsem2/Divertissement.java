@@ -5,13 +5,12 @@
  */
 package projetsem2;
 
-import java.io.Serializable;
 
 /**
  *
  * @author lamul
  */
-public class Divertissement extends Emission implements Serializable {
+public class Divertissement extends Emission {
 
     protected Animateur a;
 
@@ -27,6 +26,11 @@ public class Divertissement extends Emission implements Serializable {
     
     public String toString() {
         return super.toString() + ", " + a + ')' + '\n';
+    }
+    
+    //Méthode pour la sauvegarde en texte
+    public String getTexteASauver() {
+        return super.getTexteASauver() + "|" + a.getTexteASauver();
     }
 }
 

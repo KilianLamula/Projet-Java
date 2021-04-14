@@ -28,7 +28,7 @@ public class ProgrammeEtSauvegarde {
         ProgrammeTele programme = new ProgrammeTele(lesEmissions);
 
         //Chemin d'accès au fichier de sauvegarde
-        String filepath = "C:\\Users\\lamul\\OneDrive\\Documents\\NetBeansProjects\\ProjetSEM2\\src\\projetsem2\\Sauvegarde du programme.dat";
+        String filePath = "C:\\Users\\lamul\\OneDrive\\Documents\\NetBeansProjects\\ProjetSEM2\\src\\projetsem2\\Sauvegarde du programme.txt";
 
         try {
             //Création des émissions
@@ -57,19 +57,20 @@ public class ProgrammeEtSauvegarde {
             Logger.getLogger(ProgrammeEtSauvegarde.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        //Sauvegarde en binaire
+        // Sauvegarde en texte
         try {
-            programme.sauver(filepath);
-            System.out.println("Programme sauvegardé en binaire dans le fichier " + filepath);
+            programme.sauverTexte(filePath);
+            System.out.println("Voiture sauvegardée en texte dans le fichier " + filePath);
         } catch (IOException ex) {
             Logger.getLogger(ProgrammeEtSauvegarde.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        // Lecture en binaire
+
+        // Lecture en texte
+        ProgrammeTele lu;
         try {
-            ProgrammeTele lue = ProgrammeTele.lire(filepath);
-            System.out.println("Programme lue en binaire = " + lue);
-        } catch (IOException | ClassNotFoundException ex) {
+            lu = ProgrammeTele.lireTexte(filePath);
+            System.out.println("Programme télé lu en texte = " + lu);
+        } catch (IOException ex) {
             Logger.getLogger(ProgrammeEtSauvegarde.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

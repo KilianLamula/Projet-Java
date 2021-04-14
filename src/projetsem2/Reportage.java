@@ -5,13 +5,12 @@
  */
 package projetsem2;
 
-import java.io.Serializable;
 
 /**
  *
  * @author lamul
  */
-public class Reportage extends Emission implements Serializable {
+public class Reportage extends Emission {
     
     protected Theme theme;
     
@@ -29,4 +28,8 @@ public class Reportage extends Emission implements Serializable {
         return super.toString() + ", theme=" + theme + ')' + '\n';
     }
     
+    //Méthode pour la sauvegarde en texte
+    public String getTexteASauver() {
+        return super.getTexteASauver() + "|" + theme;
+    }
 }

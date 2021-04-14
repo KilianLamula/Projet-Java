@@ -5,13 +5,12 @@
  */
 package projetsem2;
 
-import java.io.Serializable;
 
 /**
  *
  * @author lamul
  */
-public class Fiction extends Emission implements Serializable {
+public class Fiction extends Emission {
 
     protected int annee;
     protected boolean rediffusion;
@@ -36,6 +35,11 @@ public class Fiction extends Emission implements Serializable {
 
     public String toString() {
         return super.toString() + ", annee=" + annee + ", rediffusion=" + rediffusion + ", " + r + ')' + '\n';
+    }
+    
+    //Méthode pour la sauvegarde en texte
+    public String getTexteASauver() {
+        return super.getTexteASauver() + "|" + annee + "|" + rediffusion + "|" + r.getTexteASauver();
     }
 
 }

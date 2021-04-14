@@ -5,20 +5,18 @@
  */
 package projetsem2;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /**
  *
  * @author lamul
  */
-public class ProgrammeTele extends ArrayList implements Serializable {
+public class ProgrammeTele extends ArrayList {
 
     private ArrayList<Emission> lesEmissions;
 
@@ -60,21 +58,31 @@ public class ProgrammeTele extends ArrayList implements Serializable {
         }
         System.out.println("La grille est valide");
     }
-    
+
     //Les deux méthodes pour la sauvegarde du programme :
-    
-    public void sauver(String filePath) throws FileNotFoundException, IOException {
-        FileOutputStream fos = new FileOutputStream(filePath);
-        ObjectOutputStream oos = new ObjectOutputStream(fos);
-        oos.writeObject(this);
-        oos.close();
+    public void sauverTexte(String filePath) throws IOException {
+        FileWriter fw = new FileWriter(filePath, false);
+        // Pour chaque attribut de mon instance je l'écris dans le fichier
+        for (Emission e : lesEmissions) {
+            fw.write(e.getTexteASauver() + "#");
+            // On insère un retour à la ligne
+            fw.write(System.lineSeparator());
+        }
+        fw.close();
     }
-    
-    public static ProgrammeTele lire(String filePath) throws FileNotFoundException, IOException, ClassNotFoundException{
-        FileInputStream fis = new FileInputStream(filePath);
-        ObjectInputStream ois = new ObjectInputStream(fis);
-        ProgrammeTele obj = (ProgrammeTele) ois.readObject();
-        ois.close();
-        return obj;
+
+    public static ProgrammeTele lireTexte(String filePath) throws IOException {
+        Scanner sc = new Scanner(Paths.get(filePath)).useDelimiter("\n");
+        ArrayList<Emission> lesEmissions = new ArrayList<>();
+        while (sc.hasNext()) {
+            String ligne = sc.next();
+            lesEmissions.add(Emission.lireTexte(ligne));
+        }
+//        StringTokenizer token = new StringTokenizer(ligne, "|");
+//        while (token.hasMoreElements()) {
+//            lesEmissions.add(Emission.lireTexte(token.nextToken()));
+//        }
+        return new ProgrammeTele(lesEmissions);
     }
+
 }

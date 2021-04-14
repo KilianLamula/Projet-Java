@@ -5,13 +5,12 @@
  */
 package projetsem2;
 
-import java.io.Serializable;
 
 /**
  *
  * @author lamul
  */
-public class Personne implements Serializable {
+public class Personne {
 
     private String nom;
     private String prenom;
@@ -31,6 +30,11 @@ public class Personne implements Serializable {
 
     public String getPrenom() {
         return prenom;
+    }
+    
+    //Méthode pour la sauvegarde en texte
+    public String getTexteASauver() {
+        return nom + "|" + prenom;
     }
 
 }

@@ -17,4 +17,8 @@ public class Animateur extends Personne implements Serializable {
         super(nom, prenom);
     }
     
+    //Méthode pour la sauvegarde en texte
+    public String getTexteASauver() {
+        return super.getTexteASauver();
+    }
 }
