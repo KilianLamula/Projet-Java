@@ -5,13 +5,12 @@
  */
 package projetsem2;
 
-import java.io.Serializable;
 
 /**
  *
  * @author lamul
  */
-public class Realisateur extends Personne implements Serializable {
+public class Realisateur extends Personne {
 
     public Realisateur(String nom, String prenom) {
         super(nom, prenom);

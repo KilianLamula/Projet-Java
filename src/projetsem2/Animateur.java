@@ -11,7 +11,7 @@ import java.io.Serializable;
  *
  * @author lamul
  */
-public class Animateur extends Personne implements Serializable {
+public class Animateur extends Personne {
 
     public Animateur(String nom, String prenom) {
         super(nom, prenom);
