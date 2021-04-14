@@ -78,10 +78,6 @@ public class ProgrammeTele extends ArrayList {
             String ligne = sc.next();
             lesEmissions.add(Emission.lireTexte(ligne));
         }
-//        StringTokenizer token = new StringTokenizer(ligne, "|");
-//        while (token.hasMoreElements()) {
-//            lesEmissions.add(Emission.lireTexte(token.nextToken()));
-//        }
         return new ProgrammeTele(lesEmissions);
     }
 
