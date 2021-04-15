@@ -24,7 +24,7 @@ public class Main {
         ArrayList<Emission> lesEmissions = new ArrayList<Emission>();
         //Création d'une liste pour stocker les messages d'exceptions
         ArrayList<Exception> exceptions = new ArrayList();
-        //Création du programme télé savane
+        //Création du programme télé
         ProgrammeTele programme = new ProgrammeTele(lesEmissions);
 
         try {
@@ -36,7 +36,7 @@ public class Main {
             Emission e4 = new Fiction("Avatar", 3, 9, 2009, true, new Realisateur("Cameron", "James"));
             Emission e5 = new Fiction("Alita", 4, 12, 2019, true, new Realisateur("Rodriguez", "Robert"));
             Emission e6 = new Fiction("Passengers", 3, 16, 2016, true, new Realisateur("Tyldum", "Morten"));
-            Emission e7 = new Divertissement("TPMP", 19, new Animateur("Hamouna", "Cyril"));
+            Emission e7 = new Divertissement("TPMP", 19, new Animateur("Hanouna", "Cyril"));
             Emission e8 = new Fiction("Interstellar", 3, 21, 2014, false, new Realisateur("Nolan", "Christopher"));
 
             //Grille chevauchement
@@ -69,7 +69,7 @@ public class Main {
 
             //Affichage du programme pour la grille valide
             System.out.println("Grille Valide:");
-            System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
+            System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions + '\n');
 
             //On supprime toutes les émissions pour pouvoir créer une nouvelle grille
             lesEmissions.clear();
@@ -100,7 +100,7 @@ public class Main {
 
             //Affichage du programme pour la grille chevauchement
             System.out.println("Grille Chevauchement:");
-            System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
+            System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions + '\n');
 
             //On supprime toutes les émissions pour pouvoir créer une nouvelle grille
             lesEmissions.clear();
@@ -138,8 +138,8 @@ public class Main {
 
         //Affichage du programme
         System.out.println("Grille Trou:");
-        System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions);
-        System.out.println("Les erreurs s'étant produites pendant le développement sont: ");
+        System.out.println("Les émissions diffusé dans la journée sont : " + '\n' + lesEmissions + '\n');
+        System.out.println("Les erreurs s'étant produites pendant le développement sont: " + '\n');
         for(Exception ex : exceptions) {
             System.out.println(ex);
         }

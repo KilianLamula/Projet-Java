@@ -6,6 +6,8 @@
 package projetsem2;
 
 import java.io.Serializable;
+import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -21,4 +23,5 @@ public class Animateur extends Personne {
     public String getTexteASauver() {
         return super.getTexteASauver();
     }
+
 }

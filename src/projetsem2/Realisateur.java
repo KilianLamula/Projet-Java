@@ -5,6 +5,8 @@
  */
 package projetsem2;
 
+import java.util.Scanner;
+import java.util.StringTokenizer;
 
 /**
  *
@@ -15,7 +17,7 @@ public class Realisateur extends Personne {
     public Realisateur(String nom, String prenom) {
         super(nom, prenom);
     }
-    
+
     //Méthode pour la sauvegarde en texte
     public String getTexteASauver() {
         return super.getTexteASauver();

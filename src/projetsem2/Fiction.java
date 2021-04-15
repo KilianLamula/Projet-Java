@@ -17,7 +17,7 @@ public class Fiction extends Emission {
     protected Realisateur r;
 
     public Fiction(String nom, int duree, int heureDebut, int annee, boolean rediffusion, Realisateur r) throws HoraireInvalideException, DureeInvalideException {
-        super(nom, duree, heureDebut);
+        super("Fiction", nom, duree, heureDebut);
         this.annee = annee;
         this.rediffusion = rediffusion;
         this.r = r;

@@ -38,7 +38,7 @@ public class ProgrammeEtSauvegarde {
             Emission e4 = new Fiction("Avatar", 3, 9, 2009, true, new Realisateur("Cameron", "James"));
             Emission e5 = new Fiction("Alita", 4, 12, 2019, true, new Realisateur("Rodriguez", "Robert"));
             Emission e6 = new Fiction("Passengers", 3, 16, 2016, true, new Realisateur("Tyldum", "Morten"));
-            Emission e7 = new Divertissement("TPMP", 19, new Animateur("Hamouna", "Cyril"));
+            Emission e7 = new Divertissement("TPMP", 19, new Animateur("Hanouna", "Cyril"));
             Emission e8 = new Fiction("Interstellar", 3, 21, 2014, false, new Realisateur("Nolan", "Christopher"));
 
             //Remplissage de la liste
@@ -60,7 +60,7 @@ public class ProgrammeEtSauvegarde {
         // Sauvegarde en texte
         try {
             programme.sauverTexte(filePath);
-            System.out.println("Voiture sauvegardée en texte dans le fichier " + filePath);
+            System.out.println("Programme sauvegardé en texte dans le fichier " + filePath);
         } catch (IOException ex) {
             Logger.getLogger(ProgrammeEtSauvegarde.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -69,8 +69,12 @@ public class ProgrammeEtSauvegarde {
         ProgrammeTele lu;
         try {
             lu = ProgrammeTele.lireTexte(filePath);
-            System.out.println("Programme télé lu en texte = " + lu);
+            System.out.println("Programme télé lu en texte : " + "\n" + lu);
         } catch (IOException ex) {
+            Logger.getLogger(ProgrammeEtSauvegarde.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (HoraireInvalideException ex) {
+            Logger.getLogger(ProgrammeEtSauvegarde.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (DureeInvalideException ex) {
             Logger.getLogger(ProgrammeEtSauvegarde.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

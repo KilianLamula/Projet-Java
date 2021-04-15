@@ -1,8 +1,8 @@
-Inception|4|0|2010|true|Nolan|Christopher#
-La danse des oiseaux|1|4|ANIMALIER#
-Independence|4|5|1996|true|Emmerich|Roland#
-Avatar|3|9|2009|true|Cameron|James#
-Alita|4|12|2019|true|Rodriguez|Robert#
-Passengers|3|16|2016|true|Tyldum|Morten#
-TPMP|2|19|Hamouna|Cyril#
-Interstellar|3|21|2014|false|Nolan|Christopher#
+Fiction|Inception|4|0|2010|true|Nolan|Christopher|
+Reportage|La danse des oiseaux|1|4|ANIMALIER|
+Fiction|Independence|4|5|1996|true|Emmerich|Roland|
+Fiction|Avatar|3|9|2009|true|Cameron|James|
+Fiction|Alita|4|12|2019|true|Rodriguez|Robert|
+Fiction|Passengers|3|16|2016|true|Tyldum|Morten|
+Divertissement|TPMP|2|19|Hanouna|Cyril|
+Fiction|Interstellar|3|21|2014|false|Nolan|Christopher|

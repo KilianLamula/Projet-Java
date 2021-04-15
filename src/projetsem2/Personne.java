@@ -34,7 +34,7 @@ public class Personne {
     
     //Méthode pour la sauvegarde en texte
     public String getTexteASauver() {
-        return nom + "|" + prenom;
+        return nom + "|" + prenom + "|";
     }
 
 }

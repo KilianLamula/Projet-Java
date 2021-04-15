@@ -15,7 +15,7 @@ public class Divertissement extends Emission {
     protected Animateur a;
 
     public Divertissement(String nom, int heureDebut, Animateur a) throws HoraireInvalideException, DureeInvalideException {
-        super(nom, 2, heureDebut);
+        super("Divertissement", nom, 2, heureDebut);
         this.a = a;
         
         //Exception horaires programmation : uniquement entre 18h et 23h compris

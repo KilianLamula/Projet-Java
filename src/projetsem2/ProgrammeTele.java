@@ -25,7 +25,7 @@ public class ProgrammeTele extends ArrayList {
     }
 
     public String toString() {
-        return "Le programme télé est : " + lesEmissions;
+        return "Le programme télé est : " + "\n" + lesEmissions;
     }
 
     //Méthode pour gérer les trous et les chevauchements
@@ -56,27 +56,58 @@ public class ProgrammeTele extends ArrayList {
                 throw new TrouException("Il y a un trou à " + j + "h.");
             }
         }
-        System.out.println("La grille est valide");
+        System.out.println("La grille est valide :" + '\n');
     }
 
     //Les deux méthodes pour la sauvegarde du programme :
+    
+    //Méthode qui permet de sauvegarder le programme dans un fichier texte
     public void sauverTexte(String filePath) throws IOException {
         FileWriter fw = new FileWriter(filePath, false);
         // Pour chaque attribut de mon instance je l'écris dans le fichier
         for (Emission e : lesEmissions) {
-            fw.write(e.getTexteASauver() + "#");
+            fw.write(e.getTexteASauver());
             // On insère un retour à la ligne
             fw.write(System.lineSeparator());
         }
         fw.close();
     }
-
-    public static ProgrammeTele lireTexte(String filePath) throws IOException {
+    //Méthode qui permet de lire le fichier texte enregistré
+    public static ProgrammeTele lireTexte(String filePath) throws IOException, HoraireInvalideException, DureeInvalideException {
         Scanner sc = new Scanner(Paths.get(filePath)).useDelimiter("\n");
         ArrayList<Emission> lesEmissions = new ArrayList<>();
         while (sc.hasNext()) {
             String ligne = sc.next();
-            lesEmissions.add(Emission.lireTexte(ligne));
+            StringTokenizer token = new StringTokenizer(ligne, "|");
+            String type = token.nextToken();
+            String nom = token.nextToken();
+            int duree = Integer.parseInt(token.nextToken());
+            int heureDebut = Integer.parseInt(token.nextToken());
+            //On différencie trois cas pour les 3 types d'émissions car elles ont des attributs différents
+            if (type.contains("Reportage")) {
+                String val = token.nextToken();
+                Theme theme = null;
+                if((val.contains("ANIMALIER"))){
+                    theme = Theme.ANIMALIER;
+                }
+                else if(val.contains("INFORMATION")){
+                    theme = Theme.INFORMATION;
+                }
+                else{
+                    theme = Theme.CULTUREL;
+                }
+                lesEmissions.add(new Reportage(nom, heureDebut, theme));
+            } else if (type.contains("Divertissement")) {
+                String aNom = token.nextToken();
+                String aPrenom = token.nextToken();
+                lesEmissions.add(new Divertissement(nom, heureDebut, new Animateur(aNom, aPrenom)));
+            } else{
+                int annee = Integer.parseInt(token.nextToken());
+                boolean rediff = Boolean.parseBoolean(token.nextToken());
+                String rNom = token.nextToken();
+                String rPrenom = token.nextToken();
+                lesEmissions.add(new Fiction(nom, duree, heureDebut, annee, rediff, new Realisateur(rNom, rPrenom)));
+            }
         }
         return new ProgrammeTele(lesEmissions);
     }

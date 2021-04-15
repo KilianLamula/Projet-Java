@@ -15,7 +15,7 @@ public class Reportage extends Emission {
     protected Theme theme;
     
     public Reportage(String nom, int heureDebut, Theme theme) throws HoraireInvalideException, DureeInvalideException{
-        super(nom, 1, heureDebut);
+        super("Reportage", nom, 1, heureDebut);
         this.theme = theme;
         
         //Exception horaires programmation : entre 00h et 6h ou entre 14h et 18h comrpis
@@ -30,6 +30,6 @@ public class Reportage extends Emission {
     
     //Méthode pour la sauvegarde en texte
     public String getTexteASauver() {
-        return super.getTexteASauver() + "|" + theme;
+        return super.getTexteASauver() + "|" + theme + "|";
     }
 }
