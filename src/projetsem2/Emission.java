@@ -44,15 +44,6 @@ public class Emission {
         return heureDebut;
     }
 
-    //Méthode qui permet de sauvegarder une émission
-    public void sauverTexte(String filePath) throws IOException {
-        FileWriter fw = new FileWriter(filePath, false);
-        // Pour chaque attribut de mon instance je l'écris dans le fichier
-        fw.write(this.getTexteASauver());
-        fw.write(System.lineSeparator());
-        fw.close();
-    }
-
     public String getTexteASauver() {
         return type + "|" + nom + "|" + duree + "|" + heureDebut;
     }
