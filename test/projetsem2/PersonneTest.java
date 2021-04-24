@@ -50,7 +50,7 @@ public class PersonneTest {
     }
     
     /**
-     * Test of toString method, of class Personne.
+     * Test of getNom method, of class Personne.
      */
     @Test
     public void testGetNom() {
