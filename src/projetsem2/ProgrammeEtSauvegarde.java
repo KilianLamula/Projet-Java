@@ -29,6 +29,9 @@ public class ProgrammeEtSauvegarde {
 
         //Chemin d'accès au fichier de sauvegarde
         String filePath = "C:\\Users\\lamul\\OneDrive\\Documents\\NetBeansProjects\\ProjetSEM2\\src\\projetsem2\\Sauvegarde du programme.txt";
+        
+        //Création du tableau (affichage graphique)
+        TableauProgramme tab = new TableauProgramme(lesEmissions);
 
         try {
             //Création des émissions
@@ -50,6 +53,9 @@ public class ProgrammeEtSauvegarde {
             lesEmissions.add(e6);
             lesEmissions.add(e7);
             lesEmissions.add(e8);
+            
+            //Affichage graphique
+            tab.getEmission();
 
         } catch (HoraireInvalideException ex) {
             Logger.getLogger(ProgrammeEtSauvegarde.class.getName()).log(Level.SEVERE, null, ex);
