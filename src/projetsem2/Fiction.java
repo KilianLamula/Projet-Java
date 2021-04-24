@@ -41,5 +41,15 @@ public class Fiction extends Emission {
     public String getTexteASauver() {
         return super.getTexteASauver() + "|" + annee + "|" + rediffusion + "|" + r.getTexteASauver();
     }
+    
+    public int getAnnee() {
+        return annee;
+    }
+    
+    public boolean isRediffusion() {
+        return rediffusion;
+    }
+    
+    
 
 }

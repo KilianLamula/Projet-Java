@@ -13,7 +13,7 @@ import java.util.logging.Logger;
  *
  * @author lamul
  */
-public class Main {
+public class MainTestsFonctionnels {
 
     /**
      * @param args the command line arguments

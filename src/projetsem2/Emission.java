@@ -31,6 +31,10 @@ public class Emission {
     public String toString() {
         return type + " : nom=" + nom + ", duree=" + duree + ", heureDebut=" + heureDebut;
     }
+    
+    public String getType() {
+        return type;
+    }
 
     public String getNom() {
         return nom;
@@ -43,7 +47,7 @@ public class Emission {
     public int getHeureDebut() {
         return heureDebut;
     }
-
+    
     public String getTexteASauver() {
         return type + "|" + nom + "|" + duree + "|" + heureDebut;
     }
