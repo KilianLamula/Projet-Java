@@ -84,6 +84,6 @@ public class DivertissementTest {
         assertTrue(expResult == result);
         //Si tout se passe bien on sort du test (car mauvais horaire donc exception) dés la première ligne sinon fail
         Divertissement instance2 = new Divertissement("",10,new Animateur("",""));
-        fail("On aurait dû avoir une exception !"); 
+        fail("On aurait dû avoir une HoraireInvalideException !");
     }
 }
