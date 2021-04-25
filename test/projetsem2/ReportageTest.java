@@ -78,8 +78,12 @@ public class ReportageTest {
      */
     @Test (expected = HoraireInvalideException.class)
     public void testReportageHoraireInvalideException() throws HoraireInvalideException, DureeInvalideException {
-        //Si tout se passe bien on sort du test dés la première ligne sinon fail
-        Reportage instance = new Reportage("",10,Theme.ANIMALIER);
-        fail("On aurait dû avoir une exception !"); 
+        Reportage instance = new Reportage("",4,Theme.ANIMALIER);
+        int expResult = 4;
+        int result = instance.getHeureDebut();
+        assertTrue(expResult == result);
+        //Si tout se passe bien on sort du test (car mauvais horaire donc exception) dés la première ligne sinon fail
+        Reportage instance2 = new Reportage("",10,Theme.ANIMALIER);
+        fail("On aurait dû avoir une HoraireInvalideException !"); 
     }
 }
